@@ -17,7 +17,11 @@ class NodeDisplayScreen extends StatelessWidget {
           Node(2,69.1,40.1,19),
           Node(3,69.0,40.3,20),
           Node(4,68.5,32.2,721),
-          Node(5,68.2,31.0,735),
+          Node(5,68.2,31.0,745),
+          Node(6,69.3,31.5,765),
+          Node(7,69.1,32.0,100),
+          Node(8,68.7,32.4,68),
+          Node(9,69.5,30.1,12),
         ]
       )
     );
