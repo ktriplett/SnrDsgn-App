@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:senior_design/global_states.dart';
+import 'package:senior_design/screens/node_display_screen/node_states.dart';
 import 'package:senior_design/screens//login_screen/login_screen.dart';
 import 'package:senior_design/screens//node_display_screen/node_display_screen.dart';
 import 'package:senior_design/screens/login_screen/login_state.dart';
+import 'package:senior_design/screens/node_display_screen/node_history_screen/node_history_screen.dart';
 
 void main() {
   runApp(
       MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context) => GlobalStates()),
+          ChangeNotifierProvider(create: (context) => NodeStates()),
           ChangeNotifierProvider(create: (context) => LoginState()),
         ],
         child: MyApp(),
@@ -38,9 +39,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginScreen(),
-        '/nodes' : (context) => NodeDisplayScreen()
+        '/nodes' : (context) => NodeDisplayScreen(),
+        '/nodes/history' : (context) => NodeHistoryScreen()
       }
-    ); // MaterialApp
+    );
   }
 }
 

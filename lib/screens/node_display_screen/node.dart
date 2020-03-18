@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:senior_design/screens/node_display_screen/node_states.dart';
 
 class Node extends StatelessWidget {
   final int _node_num, _node_bright;
-  final double _node_temp, _node_humidity;
+  final double _node_temp, _node_humidity, _date_time;
 
-  Node(this._node_num, this._node_temp, this._node_humidity, this._node_bright);
+  Node(this._node_num, this._node_temp, this._node_humidity, this._node_bright, this._date_time);
 
   @override
   Widget build(BuildContext context) {
+    final nodeStates = Provider.of<NodeStates>(context);
     return GestureDetector(
       child: Container(
         margin: const EdgeInsets.all(30.0),
@@ -37,8 +41,14 @@ class Node extends StatelessWidget {
           ]
         ),
       ),
-      onTap: () {
-      }
+      onLongPress: (){
+        nodeStates.displayHistory(this);
+        Navigator.pushNamed(context, '/nodes/history');
+      },
     );
   }
+  int get getNum => _node_num;
+  double get getTemp => _node_temp;
+  double get getTime => _date_time;
+
 }

@@ -13,11 +13,11 @@ class NodeDisplayScreen extends StatelessWidget {
       body: GridView.count(
         crossAxisCount: 2,
         children: [
-          Node(1,68.7,40.2,20),
-          Node(2,69.1,40.1,19),
-          Node(3,69.0,40.3,20),
-          Node(4,68.5,32.2,721),
-          Node(5,68.2,31.0,735),
+          Node(1,68.7,40.2,20,0),
+          Node(2,69.1,40.1,19,1),
+          Node(3,69.0,40.3,20,2),
+          Node(4,68.5,32.2,721,3),
+          Node(5,68.2,31.0,735,4),
         ]
       )
     );
